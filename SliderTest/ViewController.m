@@ -10,9 +10,19 @@
 
 @interface ViewController ()
 
+@property (strong, nonatomic) IBOutlet UILabel *label;
+
+@property (strong, nonatomic) IBOutlet UISlider *slider;
 @end
 
 @implementation ViewController
+
+- (IBAction)progressChanged:(id)sender {
+    
+    UISlider *slider = (UISlider *)sender;
+    _label.text = [NSString stringWithFormat:@"Value: %f",slider.value];
+}
+
 
 - (void)viewDidLoad
 {
